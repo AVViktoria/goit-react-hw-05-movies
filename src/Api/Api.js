@@ -2,7 +2,7 @@
 
 // Here's an example API request:
 
-https://api.themoviedb.org/3/movie/550?api_key=31142dc0aeacf38ab901f6c28fe4e845
+//https://api.themoviedb.org/3/movie/550?api_key=31142dc0aeacf38ab901f6c28fe4e845
 
 // const API_KEY = 'api_key=301d018a3b09052968e9ce18b1793bab';
 // const BASE_URL = 'https://api.themoviedb.org/3';
@@ -237,7 +237,7 @@ https://api.themoviedb.org/3/movie/550?api_key=31142dc0aeacf38ab901f6c28fe4e845
 //       <div class="movie-card" id="${id}">
 //       <div class="movie-card__poster-container"> ${
 //         poster_path
-//           ? `<img src="https://image.tmdb.org/t/p/w300${poster_path}"`
+//            `<img src="https://image.tmdb.org/t/p/w300${poster_path}"`
 //           : `<img src="https://yt3.ggpht.com/AAKF_677TIvjFz_9xFF0R6PgiVd0kRpEtY6APSxSDRP65nXg8hkn9NFsz2bRd9_Z37DJ9D_b=s900-c-k-c0x00ffffff-no-rj"`
 //       }
 //               class="movie-card__poster"
