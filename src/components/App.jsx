@@ -1,4 +1,4 @@
-{/* <Route path="/about" element={<About />} /> */}
+
 
 //*       пример маршрутизации магазина      //
 // import { Routes, Route, Link } from "react-router-dom";
