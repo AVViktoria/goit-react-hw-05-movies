@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App/App';
+import { App } from './components/App/App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../src/theme';
@@ -8,10 +8,10 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
         <App />
-      </BrowserRouter>
-    </ThemeProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
