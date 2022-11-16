@@ -39,7 +39,7 @@ export const Navigation = () => {
       // borderRight="1px solid black"
       borderBottom="1px solid black"
       marginBottom="20px"
-      width="auto"
+      width="100vh"
     >
       <Box as="nav" display="flex" flexDirection="row">
         {navItems.map(({ href, text, icon: Icon }) => (
