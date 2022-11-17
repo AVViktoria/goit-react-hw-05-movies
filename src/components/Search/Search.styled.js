@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
    {
-    position: relative;
-    margin-bottom: 5px;
   }
 `;
 

@@ -1,15 +1,15 @@
 //*        маршрутизация      //
 import { Route, Routes } from 'react-router-dom';
-import { GlobalStyle } from '../GlobalStyle/GlobalStyle';
-import { Layouts } from '../Layouts/Layouts';
+import { GlobalStyle } from 'components/GlobalStyle/GlobalStyle';
+import { Layouts } from 'components/Layouts/Layouts';
 import { NotFound } from 'components/NotFound/NotFound';
-import { Search } from '../Search/Search';
+import { Search } from 'components/Search/Search';
 
 export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/goit-react-hw-05-movies/" element={<Layouts />}>
+        <Route path="/" element={<Layouts />}>
           <Route path="home" element={<div>Home</div>}></Route>
           <Route path="movies" element={<Search />}>
             {/* <Route path="details" element={<Details />} />
