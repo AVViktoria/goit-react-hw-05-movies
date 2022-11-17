@@ -1,5 +1,5 @@
 import { Box } from 'components/Box';
-import { Input, Label, Form, Button } from './Search.styled';
+import { Form, Input, Button } from './Search.styled';
 
 // export default function Searchbar({ onSubmit }) {
 //   const [query, setQuery] = useState('');
