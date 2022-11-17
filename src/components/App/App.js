@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layouts />}>
+        <Route path="/goit-react-hw-05-movies/" element={<Layouts />}>
           <Route path="home" element={<div>Home</div>}></Route>
           <Route path="movies" element={<Search />}>
             {/* <Route path="details" element={<Details />} />

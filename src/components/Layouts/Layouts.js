@@ -6,7 +6,6 @@ export const Layouts = () => {
   return (
     <Box display="grid" justifyContent="center">
       <Navigation />
-
       <Outlet />
     </Box>
   );
