@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BiHome } from 'react-icons/bi';
 import { BiCameraMovie } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 
 const navItems = [
   { href: 'Home', text: 'Home', icon: BiHome },
@@ -32,15 +33,7 @@ const NavItem = styled(NavLink)`
 
 export const Navigation = () => {
   return (
-    <Box
-      as="header"
-      p={4}
-      // height="100vh"
-      // borderRight="1px solid black"
-      borderBottom="1px solid black"
-      marginBottom="20px"
-      // width="100vh"
-    >
+    <Box as="header" p={4} borderBottom="1px solid black" marginBottom="20px">
       <Box as="nav" display="flex" flexDirection="row">
         {navItems.map(({ href, text, icon: Icon }) => (
           <NavItem to={href} key={href}>
@@ -49,6 +42,8 @@ export const Navigation = () => {
           </NavItem>
         ))}
       </Box>
+
+      {/* <Outlet /> */}
     </Box>
   );
 };

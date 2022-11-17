@@ -1,14 +1,19 @@
-// API Key: 31142dc0aeacf38ab901f6c28fe4e845
+import axios from 'axios';
 
-// Here's an example API request:
+const API_KEY = 'api_key=31142dc0aeacf38ab901f6c28fe4e845';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
-//https://api.themoviedb.org/3/movie/550?api_key=31142dc0aeacf38ab901f6c28fe4e845
+export const getTrendingMovie = async () => {
+  const res = await axios.get(`${BASE_URL}/trending/movie/day?${API_KEY}`);
+  //  return res.data;
+  console.log(res.data.results);
+};
 
-// const API_KEY = 'api_key=301d018a3b09052968e9ce18b1793bab';
-// const BASE_URL = 'https://api.themoviedb.org/3';
-// const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
-// // const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-// const searchURL = BASE_URL + '/search/movie?' + API_KEY;
+export const getDetailsMovie = async id => {
+  const res = await axios.get(`${BASE_URL}/movie/${id}?${API_KEY}`);
+  return res.data;
+  // console.log(res.data.results);
+};
 
 // const genres = [
 //   {
