@@ -1,15 +1,17 @@
-import { getTrendingMovie } from '../Api/Api';
+import { getTrendingMovie } from '../../services/Api/Api';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
+// import { NavLink } from 'react-router-dom';
 
-export const TrendingMoviesList = () => {
+export const TrendingMovies = () => {
   // setIsLoading(true);
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
     getTrendingMovie()
       .then(res => {
-        setTrendingMovies(res);
+        setTrendingMovies(res.results);
+        console.log(res.results);
       })
       .catch(({ message }) => {
         console.log(message);
@@ -20,7 +22,8 @@ export const TrendingMoviesList = () => {
   }
   return (
     <div>
-      <NavLink movies={trendingMovies}></NavLink>
+      <TrendingMoviesList trendingMovies={trendingMovies} /> {/* Home */}
+      {/* <NavLink movies={trendingMovies}></NavLink> */}
     </div>
   );
 };
