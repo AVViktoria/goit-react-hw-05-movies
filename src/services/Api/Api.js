@@ -30,6 +30,14 @@ export const getActors = async movieId => {
   return res.data.cast;
 };
 
+export const getReviews = async movieId => {
+  const res = await axios.get(
+    `${BASE_URL}/movie/${movieId}/reviews?${API_KEY}&language=en-US&page=1`
+  );
+  return res.data.results;
+  // console.log(res.data.results);
+};
+
 // const genres = [
 //   {
 //     id: 28,

@@ -1,6 +1,7 @@
 import { getTrendingMovie } from '../../services/Api/Api';
 import { useState, useEffect } from 'react';
 import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
+import { Cover } from './HomeMovies.styled';
 // import { NavLink } from 'react-router-dom';
 
 export const TrendingMovies = () => {
@@ -21,10 +22,10 @@ export const TrendingMovies = () => {
     return <p>Sorry, not found</p>;
   }
   return (
-    <div>
+    <Cover>
       <TrendingMoviesList trendingMovies={trendingMovies} /> {/* Home */}
       {/* <NavLink movies={trendingMovies}></NavLink> */}
-    </div>
+    </Cover>
   );
 };
 

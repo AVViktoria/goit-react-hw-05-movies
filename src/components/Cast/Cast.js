@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getActors } from 'services/Api/Api';
+import noPoster from 'images/Posters/noPhoto.jpeg';
 
 export const Cast = () => {
   const [movieCast, setMovieCast] = useState([]);
@@ -20,16 +21,20 @@ export const Cast = () => {
   return (
     <>
       <ul>
-        {movieCast.map(e => {
+        {movieCast.map(({ id, profile_path, name }) => {
           return (
-            <li key={e.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${e.poster_path}`}
-                alt={e.title}
-                width="300"
-                height="400"
-              />
-              <h1>{e.title}</h1>
+            <li key={id}>
+              {profile_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                  alt={name}
+                  width="300"
+                  height="400"
+                />
+              ) : (
+                <img src={noPoster} alt={name} width="300" height="400" />
+              )}
+              <h2>{name}</h2>
 
               {/* {e.name} */}
             </li>

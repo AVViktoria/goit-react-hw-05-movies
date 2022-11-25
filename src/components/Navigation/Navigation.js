@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+// import { Tab } from './Navigation.styled';
 
 export const Navigation = () => {
   const [value, setValue] = useState(0);
@@ -11,7 +12,7 @@ export const Navigation = () => {
     setValue(newValue);
   };
   return (
-    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+    <Box sx={{ width: '100%', bgcolor: '#00000042' }}>
       <Tabs value={value} onChange={handleChange} centered>
         <Tab label="home" component={NavLink} to="/" />
         <Tab label="movies" component={NavLink} to="/movies" />

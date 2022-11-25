@@ -1,21 +1,33 @@
-// import { getTrendingMovie } from '../../services/Api/Api';
-// import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import noPoster from 'images/Posters/noPoster.jpeg';
+import { Cover, List } from './MovieList.styled';
 
 export const TrendingMoviesList = ({ trendingMovies }) => {
   // setIsLoading(true);
   const location = useLocation();
 
   return (
-    <ul>
-      {trendingMovies.map(e => (
-        <li key={e.id}>
-          <Link to={`/movies/${e.id}`} state={{ from: location }}>
-            {e.title || e.name}
+    <List>
+      {trendingMovies.map(({ id, poster_path, title, name }) => (
+        <li key={id}>
+          <Link to={`/movies/${id}`} state={{ from: location }}>
+            <Cover>
+              {poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                  alt={title}
+                  width="300"
+                  height="400"
+                />
+              ) : (
+                <img src={noPoster} alt={title} width="300" height="400" />
+              )}
+              <h2>{title || name}</h2>
+            </Cover>
           </Link>
         </li>
       ))}
-    </ul>
+    </List>
   );
 };
