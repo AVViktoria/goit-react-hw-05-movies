@@ -47,7 +47,7 @@ export const Button = styled.button`
       margin-left: -1px;
       background-color: #c0392b;
       float: left; /* IE 9 Fix */
-      @include transition(all 0.2s ease-in);
+      transition: all 0.2s ease-in;
       &:hover {
         background-color: #6e0e0e;
       }
@@ -86,7 +86,7 @@ export const LinkName = styled.div`
     margin-left: -1px;
     background-color: #c0392b;
     float: left; /* IE 9 Fix */
-    @include transition(all 0.2s ease-in);
+    transition: all 0.2s ease-in;
     &:hover {
       background-color: #6e0e0e;
     }
