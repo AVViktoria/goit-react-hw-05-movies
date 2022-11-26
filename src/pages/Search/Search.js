@@ -4,10 +4,10 @@ import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'services/Api/Api';
 import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
 
-import { Box } from 'components/Box';
-import { Form, Input, Button } from './Search.styled';
+// import { Box } from 'components/Box';
+import { Form, Input, Button, Cover, TrendCover } from './Search.styled';
 
-export const Search = () => {
+const Search = () => {
   const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const [moviesByQuery, setMoviesByQuery] = useState([]);
@@ -35,7 +35,7 @@ export const Search = () => {
     getMoviesByQuery(searchQuery).then(setMoviesByQuery);
   }, [searchParams]);
   return (
-    <Box>
+    <Cover>
       <Form onSubmit={onSubmitForm}>
         <Input
           type="text"
@@ -47,34 +47,10 @@ export const Search = () => {
         />
         <Button type="submit">Search</Button>
       </Form>
-      <TrendingMoviesList trendingMovies={moviesByQuery} />
-    </Box>
+      <TrendCover>
+        <TrendingMoviesList trendingMovies={moviesByQuery} />
+      </TrendCover>
+    </Cover>
   );
 };
-// export default function Searchbar({ onSubmit }) {
-
-//   const onChangeInput = e => {
-//     const { value } = e.currentTarget;
-//     setQuery(value);
-//   };
-
-// const onSubmitForm = e => {
-//   e.preventDefault();
-
-//   onSubmit(query);
-//   if (query.trim() === '') {
-//     toast.error("Please, enter some picture's name!", {
-//       position: 'top-right',
-//       autoClose: 2000,
-//       hideProgressBar: false,
-//       closeOnClick: true,
-//       pauseOnHover: true,
-//       draggable: true,
-//       progress: undefined,
-//       theme: 'colored',
-//     });
-//     return;
-//   }
-
-//   onSubmit(query);
-// };
+export default Search;

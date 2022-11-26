@@ -10,6 +10,5 @@ export const Cover = styled.div`
    {
     padding-top: 30px;
     padding-bottom: 10px;
-    background-color: rgb(64 64 64 / 17%);
   }
 `;

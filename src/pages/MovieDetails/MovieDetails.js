@@ -1,6 +1,18 @@
 import { getDetailsMovie } from 'services/Api/Api';
 import { useState, useEffect } from 'react';
-import { Button } from 'pages/Search/Search.styled';
+
+import {
+  CardCover,
+  Cover,
+  Button,
+  Img,
+  InfCover,
+  Title,
+  Item,
+  ButCover,
+  LinkCover,
+  LinkName,
+} from './MovieDetails.styled';
 import {
   useNavigate,
   useParams,
@@ -9,7 +21,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,53 +44,60 @@ export const MovieDetails = () => {
   if (!movieDetails) {
     return <p>Sorry, doesn't have details</p>;
   }
-  const {
-    title,
-    poster_path,
-    vote_average,
-    release_date,
-    overview,
-    // id,
-    genre_ids,
-  } = movieDetails;
+  const { title, poster_path, vote_average, release_date, overview, genres } =
+    movieDetails;
   return (
-    <>
-      <Button type="button" onClick={handleGoBack}>
-        Go Back
-      </Button>
-      <div>
-        <img
+    <Cover>
+      <ButCover>
+        <Button type="button" onClick={handleGoBack}>
+          Go Back
+        </Button>
+      </ButCover>
+
+      <CardCover>
+        <Img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={title}
           width="300"
           height="400"
         />
-        <h1>{title}</h1>
-        <p>{overview}</p>
-        <p>{release_date}</p>
-        <p>{vote_average}</p>
-        <p>{genre_ids}</p>
-        {/* <p>{id}</p> */}
-      </div>
-      <Link to="cast" state={location.state}>
-        Cast
-      </Link>
-      <Link to="reviews" state={location.state}>
-        Reviews
-      </Link>
+        <InfCover>
+          <Item>
+            <Title>{title}</Title>
+          </Item>
+
+          <Item>
+            <h3>About: </h3>
+            <p>{overview}</p>
+          </Item>
+
+          <Item>
+            <h3>Release Date: </h3>
+            <p>{release_date}</p>
+          </Item>
+
+          <Item>
+            <h3>Score: </h3>
+            <p>{vote_average.toFixed(1)}</p>
+          </Item>
+
+          <Item>
+            <h3>Genres</h3>
+            <p>{genres ? genres.map(genre => genre.name).join(' ') : '-'}</p>
+          </Item>
+        </InfCover>
+      </CardCover>
+      <LinkCover>
+        <Link to="cast" state={location.state}>
+          <LinkName>Cast</LinkName>
+        </Link>
+        <Link to="reviews" state={location.state}>
+          <LinkName>Reviews</LinkName>
+        </Link>
+      </LinkCover>
+
       <Outlet />
-    </>
+    </Cover>
   );
 };
-
-/* MovieDetails{movieId} */
-
-// const {
-//       title,
-//       poster_path,
-//       vote_average,
-//       release_date,
-//       overview,
-//       id,
-//       genre_ids,
-//     } = movie;
+export default MovieDetails;

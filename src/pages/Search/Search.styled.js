@@ -1,7 +1,19 @@
 import styled from 'styled-components';
 
+export const Cover = styled.div`
+   {
+    padding: 25px;
+  }
+`;
+// background - color: rgb(64 64 64 / 17 %);
+// padding-top: 30px;
+//     padding-bottom: 10px;
 export const Form = styled.form`
    {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
   }
 `;
 
@@ -37,5 +49,10 @@ export const Button = styled.button`
     &:hover {
       background-color: #6e0e0e;
     }
+  }
+`;
+
+export const TrendCover = styled.div`
+   {
   }
 `;

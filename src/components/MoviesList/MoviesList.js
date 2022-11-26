@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import noPoster from 'images/Posters/noPoster.jpeg';
-import { Cover, List } from './MovieList.styled';
+import { Cover, List, Title, Img } from './MovieList.styled';
 
 export const TrendingMoviesList = ({ trendingMovies }) => {
   // setIsLoading(true);
@@ -14,7 +14,7 @@ export const TrendingMoviesList = ({ trendingMovies }) => {
           <Link to={`/movies/${id}`} state={{ from: location }}>
             <Cover>
               {poster_path ? (
-                <img
+                <Img
                   src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                   alt={title}
                   width="300"
@@ -23,7 +23,7 @@ export const TrendingMoviesList = ({ trendingMovies }) => {
               ) : (
                 <img src={noPoster} alt={title} width="300" height="400" />
               )}
-              <h2>{title || name}</h2>
+              <Title>{title || name}</Title>
             </Cover>
           </Link>
         </li>

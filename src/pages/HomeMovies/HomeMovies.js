@@ -4,7 +4,7 @@ import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
 import { Cover } from './HomeMovies.styled';
 // import { NavLink } from 'react-router-dom';
 
-export const TrendingMovies = () => {
+const TrendingMovies = () => {
   // setIsLoading(true);
   const [trendingMovies, setTrendingMovies] = useState([]);
 
@@ -28,5 +28,5 @@ export const TrendingMovies = () => {
     </Cover>
   );
 };
-
+export default TrendingMovies;
 // <MoviesList movies={trendingFilms} />

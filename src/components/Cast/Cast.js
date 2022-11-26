@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getActors } from 'services/Api/Api';
 import noPoster from 'images/Posters/noPhoto.jpeg';
+import { Container, Img, List, Title } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const [movieCast, setMovieCast] = useState([]);
   const { movieId } = useParams();
 
@@ -19,28 +20,29 @@ export const Cast = () => {
   //   return alert('NO CAST');
   // }
   return (
-    <>
-      <ul>
+    <Container>
+      <List>
         {movieCast.map(({ id, profile_path, name }) => {
           return (
             <li key={id}>
               {profile_path ? (
-                <img
+                <Img
                   src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                   alt={name}
-                  width="300"
-                  height="400"
+                  width="170"
+                  height="240"
                 />
               ) : (
-                <img src={noPoster} alt={name} width="300" height="400" />
+                <Img src={noPoster} alt={name} width="170" height="240" />
               )}
-              <h2>{name}</h2>
+              <Title>{name}</Title>
 
               {/* {e.name} */}
             </li>
           );
         })}
-      </ul>
-    </>
+      </List>
+    </Container>
   );
 };
+export default Cast;

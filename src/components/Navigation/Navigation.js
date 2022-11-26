@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 // import { Tab } from './Navigation.styled';
 
-export const Navigation = () => {
+const Navigation = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -20,7 +20,7 @@ export const Navigation = () => {
     </Box>
   );
 };
-
+export default Navigation;
 // import { Box } from '../Box';
 // import styled from 'styled-components';
 // import { BiHome } from 'react-icons/bi';
