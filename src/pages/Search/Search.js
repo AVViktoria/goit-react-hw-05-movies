@@ -22,7 +22,7 @@ const Search = () => {
     setSearchParams({ query });
 
     if (query.trim() === '') {
-      alert("Please, enter some picture's name!");
+      alert('Please, enter some picture name!');
 
       // toast.error("Please, enter some picture's name!");
     }

@@ -9,6 +9,7 @@ import { lazy, Suspense } from 'react';
 // import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
 // import { Cast } from 'components/Cast/Cast';
 // import { Reviews } from 'components/Reviews/Reviews';
+import { ScrollToTop } from 'components/ScrollToTop';
 
 const GlobalStyle = lazy(() => import('components/GlobalStyle/GlobalStyle'));
 const Navigation = lazy(() => import('components/Navigation/Navigation'));
@@ -35,6 +36,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <GlobalStyle />
+        <ScrollToTop />
       </Suspense>
     </>
   );
