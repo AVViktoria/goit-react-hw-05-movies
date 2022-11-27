@@ -5,9 +5,7 @@ export const Cover = styled.div`
     padding: 25px;
   }
 `;
-// background - color: rgb(64 64 64 / 17 %);
-// padding-top: 30px;
-//     padding-bottom: 10px;
+
 export const Form = styled.form`
    {
     display: flex;

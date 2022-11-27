@@ -6,14 +6,7 @@ export const Cover = styled.div`
     }
   }
 `;
-// align-items: center;
-//     justify-content: center;
-// export const Cover = styled.div`
-//    {
-//     //
-//     }
-//   }
-// `;
+
 export const List = styled.li`
    {
     list-style: none;
@@ -22,9 +15,3 @@ export const List = styled.li`
     }
   }
 `;
-// export const Cover = styled.div`
-//    {
-//     //
-//     }
-//   }
-// `;

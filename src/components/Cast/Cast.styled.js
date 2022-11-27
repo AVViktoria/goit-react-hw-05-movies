@@ -46,9 +46,3 @@ export const Title = styled.h2`
 export const Container = styled.div`
   padding: 30px;
 `;
-
-// export const Img = styled.img``;
-
-// export const Img = styled.img``;
-
-// export const Img = styled.img``;

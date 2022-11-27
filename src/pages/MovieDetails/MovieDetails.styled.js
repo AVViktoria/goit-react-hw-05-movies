@@ -14,8 +14,7 @@ export const Img = styled.img`
     }
   }
 `;
-// align-items: center;
-//     justify-content: center;
+
 export const InfCover = styled.div`
    {
     width: 400px;

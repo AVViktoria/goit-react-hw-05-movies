@@ -36,8 +36,6 @@ const Cast = () => {
                 <Img src={noPoster} alt={name} width="170" height="240" />
               )}
               <Title>{name}</Title>
-
-              {/* {e.name} */}
             </li>
           );
         })}

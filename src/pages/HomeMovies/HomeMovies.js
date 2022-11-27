@@ -4,7 +4,6 @@ import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
 import { Cover } from './HomeMovies.styled';
 
 const TrendingMovies = () => {
-  // setIsLoading(true);
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {

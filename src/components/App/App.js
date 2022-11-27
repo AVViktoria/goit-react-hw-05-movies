@@ -1,19 +1,7 @@
 //*        маршрутизация      //
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-// import ScrollToTop from 'react-scroll-to-top';
-// import { TfiAngleDoubleUp } from 'react-icons/tfi';
 
-// import { GlobalStyle } from 'components/GlobalStyle/GlobalStyle';
-// import { Navigation } from 'components/Navigation/Navigation';
-// import { NotFound } from 'components/NotFound/NotFound';
-// import { Search } from 'pages/Search/Search';
-// import { TrendingMovies } from '../../pages/HomeMovies/HomeMovies';
-// import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
-// import { Cast } from 'components/Cast/Cast';
-// import { Reviews } from 'components/Reviews/Reviews';
-// import { ScrollToTop } from 'components/ScrollToTop';
-// import { ScrollToTop } from '../ScrollToTop';
 const ScrollToTopButton = lazy(() =>
   import('components/ScrollToTop/ScrollToTop')
 );
@@ -47,3 +35,17 @@ export const App = () => {
     </>
   );
 };
+
+// import ScrollToTop from 'react-scroll-to-top';
+// import { TfiAngleDoubleUp } from 'react-icons/tfi';
+
+// import { GlobalStyle } from 'components/GlobalStyle/GlobalStyle';
+// import { Navigation } from 'components/Navigation/Navigation';
+// import { NotFound } from 'components/NotFound/NotFound';
+// import { Search } from 'pages/Search/Search';
+// import { TrendingMovies } from '../../pages/HomeMovies/HomeMovies';
+// import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
+// import { Cast } from 'components/Cast/Cast';
+// import { Reviews } from 'components/Reviews/Reviews';
+// import { ScrollToTop } from 'components/ScrollToTop';
+// import { ScrollToTop } from '../ScrollToTop';
