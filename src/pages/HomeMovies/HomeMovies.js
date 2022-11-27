@@ -2,8 +2,6 @@ import { getTrendingMovie } from '../../services/Api/Api';
 import { useState, useEffect } from 'react';
 import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
 import { Cover } from './HomeMovies.styled';
-import { ScrollToTop } from 'components/ScrollToTop';
-// import { NavLink } from 'react-router-dom';
 
 const TrendingMovies = () => {
   // setIsLoading(true);
@@ -25,12 +23,9 @@ const TrendingMovies = () => {
   return (
     <>
       <Cover>
-        <TrendingMoviesList trendingMovies={trendingMovies} /> {/* Home */}
-        {/* <NavLink movies={trendingMovies}></NavLink> */}
+        <TrendingMoviesList trendingMovies={trendingMovies} />
       </Cover>
-      <ScrollToTop />
     </>
   );
 };
 export default TrendingMovies;
-// <MoviesList movies={trendingFilms} />

@@ -105,8 +105,3 @@ export const LinkCover = styled.div`
     margin-bottom: 25px;
   }
 `;
-
-// export const List = styled.ul`
-//    {
-//   }
-// `;

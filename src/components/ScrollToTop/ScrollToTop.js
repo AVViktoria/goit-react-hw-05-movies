@@ -1,49 +1,20 @@
-import { useEffect, useState } from 'react';
-// import { BiArrowFromBottom } from 'react-icons/bi';
-import { Cover, Button } from './Scroll.styled';
+import ScrollToTop from 'react-scroll-to-top';
+import { TfiAngleDoubleUp } from 'react-icons/tfi';
 
-export const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
-
+const ScrollToTopButton = () => {
   return (
     <>
-      <Cover>
-        <Button
-          type="button"
-          onClick={scrollToTop}
-          className={isVisible ? 'opacity-100' : 'opacity-0'}
-        ></Button>
-      </Cover>
+      <ScrollToTop
+        smooth
+        viewBox="0 0 24 24"
+        style={{ backgroundColor: '#c0392b' }}
+        component={
+          <p style={{ color: '#ffffff' }}>
+            <TfiAngleDoubleUp />
+          </p>
+        }
+      />
     </>
   );
 };
-
-/* <BiArrowFromBottom
-            aria-hidden="true"
-            height="15px"
-            weight="15px"
-            color="red"
-            background-color="black"
-            fill="#fff"
-          /> */
+export default ScrollToTopButton;

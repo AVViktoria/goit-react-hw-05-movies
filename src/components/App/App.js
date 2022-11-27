@@ -1,6 +1,9 @@
 //*        маршрутизация      //
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+// import ScrollToTop from 'react-scroll-to-top';
+// import { TfiAngleDoubleUp } from 'react-icons/tfi';
+
 // import { GlobalStyle } from 'components/GlobalStyle/GlobalStyle';
 // import { Navigation } from 'components/Navigation/Navigation';
 // import { NotFound } from 'components/NotFound/NotFound';
@@ -9,8 +12,11 @@ import { lazy, Suspense } from 'react';
 // import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
 // import { Cast } from 'components/Cast/Cast';
 // import { Reviews } from 'components/Reviews/Reviews';
-import { ScrollToTop } from 'components/ScrollToTop';
-
+// import { ScrollToTop } from 'components/ScrollToTop';
+// import { ScrollToTop } from '../ScrollToTop';
+const ScrollToTopButton = lazy(() =>
+  import('components/ScrollToTop/ScrollToTop')
+);
 const GlobalStyle = lazy(() => import('components/GlobalStyle/GlobalStyle'));
 const Navigation = lazy(() => import('components/Navigation/Navigation'));
 const TrendingMovies = lazy(() => import('pages/HomeMovies/HomeMovies'));
@@ -36,7 +42,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <GlobalStyle />
-        <ScrollToTop />
+        <ScrollToTopButton />
       </Suspense>
     </>
   );

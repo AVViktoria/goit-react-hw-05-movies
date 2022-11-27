@@ -6,7 +6,6 @@ import { Cover, List } from './Reviews.styled';
 export const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
   const { movieId } = useParams();
-  // console.log(movieReviews);
   useEffect(() => {
     getReviews(movieId)
       .then(setMovieReviews)
