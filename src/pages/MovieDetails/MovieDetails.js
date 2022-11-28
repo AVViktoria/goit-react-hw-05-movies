@@ -1,5 +1,6 @@
 import { getDetailsMovie } from 'services/Api/Api';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   CardCover,
@@ -100,4 +101,18 @@ const MovieDetails = () => {
     </Cover>
   );
 };
+
+Cover.propTypes = {
+  movieDetails: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      release_date: PropTypes.string,
+      vote_average: PropTypes.string,
+      overview: PropTypes.string,
+      genres: PropTypes.string,
+    })
+  ),
+};
+
 export default MovieDetails;

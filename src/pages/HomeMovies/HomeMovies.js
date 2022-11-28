@@ -2,6 +2,7 @@ import { getTrendingMovie } from '../../services/Api/Api';
 import { useState, useEffect } from 'react';
 import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
 import { Cover } from './HomeMovies.styled';
+import PropTypes from 'prop-types';
 
 const TrendingMovies = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -27,4 +28,9 @@ const TrendingMovies = () => {
     </>
   );
 };
+
+Cover.propTypes = {
+  trendingMovies: PropTypes.func.isRequired,
+};
+
 export default TrendingMovies;

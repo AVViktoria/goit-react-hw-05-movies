@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import { toast } from 'react-toastify';
 import { getMoviesByQuery } from 'services/Api/Api';
 import { TrendingMoviesList } from 'components/MoviesList/MoviesList';
@@ -52,5 +53,9 @@ const Search = () => {
       </TrendCover>
     </Cover>
   );
+};
+
+Cover.propTypes = {
+  moviesByQuery: PropTypes.func.isRequired,
 };
 export default Search;

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import noPoster from 'images/Posters/noPoster.jpeg';
 import { Cover, List, Title, Img } from './MovieList.styled';
 
@@ -32,4 +33,13 @@ export const TrendingMoviesList = ({ trendingMovies }) => {
       </List>
     </>
   );
+};
+List.propTypes = {
+  trendingMovies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      name: PropTypes.string,
+    })
+  ),
 };

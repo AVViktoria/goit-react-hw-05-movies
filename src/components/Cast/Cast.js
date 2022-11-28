@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { getActors } from 'services/Api/Api';
 import noPoster from 'images/Posters/noPhoto.jpeg';
 import { Container, Img, List, Title } from './Cast.styled';
@@ -42,5 +43,14 @@ const Cast = () => {
       </List>
     </Container>
   );
+};
+
+List.propTypes = {
+  movieCast: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ),
 };
 export default Cast;
